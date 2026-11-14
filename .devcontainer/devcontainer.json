@@ -1,0 +1,14 @@
+{
+  "name": "SpeakCare",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "SpeakCare website", "onAutoForward": "openBrowser" }
+  },
+  "postCreateCommand": "npm run check && npm test && npm run build",
+  "postStartCommand": "bash scripts/start-codespace.sh",
+  "customizations": {
+    "vscode": { "settings": { "editor.tabSize": 2, "files.autoSave": "afterDelay" } },
+    "codespaces": { "openFiles": ["README.md", "dist/app.js"] }
+  }
+}
